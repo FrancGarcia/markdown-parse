@@ -55,46 +55,35 @@ public class MarkdownParseTest {
             return regex.split(str).length > 0;
     }
 
-    @Test
-    public void addition() {
-        assertEquals(2, 1 + 1);
-    }
+    // @Test
+    // public void addition() {
+    //     assertEquals(2, 1 + 1);
+    // }
 
-    @Test
-    public void testGetLinkFileOne() throws IOException{
-        Path fileName = Path.of("test-file1.md");
-	    String contents = Files.readString(fileName);
-        ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[some-page.html]", linkOne.toString());
-    }
+    // @Test
+    // public void testGetLinkFileOne() throws IOException{
+    //     Path fileName = Path.of("test-file1.md");
+	//     String contents = Files.readString(fileName);
+    //     ArrayList<String> linkOne = getLinks(contents);
+    //     assertEquals("[some-page.html]", linkOne.toString());
+    // }
 
-    @Test
-    public void testGetLinkFileTwo() throws IOException{
-        Path fileName = Path.of("test-file2.md");
-	    String contents = Files.readString(fileName);
-        ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[]", linkOne.toString());
-    }
-
-    @Test
-    public void testGetLinkSnippet1() throws IOException{
-        Path fileName = Path.of("snippet1.md");
-	    String contents = Files.readString(fileName);
-        ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[]", linkOne.toString());
-    }
+    // @Test
+    // public void testGetLinkFileTwo() throws IOException{
+    //     Path fileName = Path.of("test-file2.md");
+	//     String contents = Files.readString(fileName);
+    //     ArrayList<String> linkOne = getLinks(contents);
+    //     assertEquals("[]", linkOne.toString());
+    // }
 
 
-
-
-    
     // Test cases for snippet1, snippet2, snippet3
     @Test
     public void testGetLinkSnippetOne() throws IOException{
         Path fileName = Path.of("snippet1.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[]", linkOne.toString());
+        assertEquals("['google.com, google.com, ucsd.edu]", linkOne.toString());
     }
 
     @Test
@@ -102,7 +91,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet2.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[]", linkOne.toString());
+        assertEquals("[a.com, a.com(()), example.com]", linkOne.toString());
     }
 
     @Test
@@ -110,7 +99,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet3.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[]", linkOne.toString());
+        assertEquals("[https://ucsd-cse15l-w22.github.io/]", linkOne.toString());
     }
 
 }
