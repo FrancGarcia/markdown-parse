@@ -60,29 +60,29 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
 
-    // @Test
-    // public void testGetLinkFileOne() throws IOException{
-    //     Path fileName = Path.of("test-file1.md");
-	//     String contents = Files.readString(fileName);
-    //     ArrayList<String> linkOne = getLinks(contents);
-    //     assertEquals("[some-page.html]", linkOne.toString());
-    // }
+    @Test
+    public void testGetLinkFileOne() throws IOException{
+        Path fileName = Path.of("test-file1.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[some-page.html]", linkOne.toString());
+    }
 
-    // @Test
-    // public void testGetLinkFileTwo() throws IOException{
-    //     Path fileName = Path.of("test-file2.md");
-	//     String contents = Files.readString(fileName);
-    //     ArrayList<String> linkOne = getLinks(contents);
-    //     assertEquals("[]", linkOne.toString());
-    // }
+    @Test
+    public void testGetLinkFileTwo() throws IOException{
+        Path fileName = Path.of("test-file2.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[]", linkOne.toString());
+    }
 
-    // @Test
-    // public void testGetLinkFileThree() throws IOException{
-    //     Path fileName = Path.of("test-file3.md");
-	//     String contents = Files.readString(fileName);
-    //     ArrayList<String> linkOne = getLinks(contents);
-    //     assertEquals("[]", linkOne.toString());
-    // }
+    @Test
+    public void testGetLinkFileThree() throws IOException{
+        Path fileName = Path.of("test-file3.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[]", linkOne.toString());
+    }
 }
 
 //     @Test
