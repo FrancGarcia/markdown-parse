@@ -86,21 +86,21 @@ public class MarkdownParseTest {
     //     assertEquals("[`google.com, google.com, ucsd.edu]", linkOne.toString());
     // }
 
-    @Test
-    public void testGetLinkSnippetTwo() throws IOException{
-        Path fileName = Path.of("snippet2.md");
-	    String contents = Files.readString(fileName);
-        ArrayList<String> linkOne = getLinks(contents);
-        assertEquals("[a.com, a.com(()), example.com]", linkOne.toString());
-    }
-
     // @Test
-    // public void testGetLinkSnippetThree() throws IOException{
-    //     Path fileName = Path.of("snippet3.md");
+    // public void testGetLinkSnippetTwo() throws IOException{
+    //     Path fileName = Path.of("snippet2.md");
 	//     String contents = Files.readString(fileName);
     //     ArrayList<String> linkOne = getLinks(contents);
-    //     assertEquals("[https://ucsd-cse15l-w22.github.io/]", linkOne.toString());
+    //     assertEquals("[a.com, a.com(()), example.com]", linkOne.toString());
     // }
+
+    @Test
+    public void testGetLinkSnippetThree() throws IOException{
+        Path fileName = Path.of("snippet3.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[https://ucsd-cse15l-w22.github.io/]", linkOne.toString());
+    }
 
 }
 
