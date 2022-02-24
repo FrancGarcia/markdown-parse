@@ -77,12 +77,42 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testGetLinkFileThree() throws IOException{
-        Path fileName = Path.of("test-file3.md");
+    public void testGetLinkSnippet1() throws IOException{
+        Path fileName = Path.of("snippet1.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> linkOne = getLinks(contents);
         assertEquals("[]", linkOne.toString());
     }
+
+
+
+
+    
+    // Test cases for snippet1, snippet2, snippet3
+    @Test
+    public void testGetLinkSnippetOne() throws IOException{
+        Path fileName = Path.of("snippet1.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[]", linkOne.toString());
+    }
+
+    @Test
+    public void testGetLinkSnippetTwo() throws IOException{
+        Path fileName = Path.of("snippet2.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[]", linkOne.toString());
+    }
+
+    @Test
+    public void testGetLinkSnippetThree() throws IOException{
+        Path fileName = Path.of("snippet3.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> linkOne = getLinks(contents);
+        assertEquals("[]", linkOne.toString());
+    }
+
 }
 
 //     @Test
